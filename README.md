@@ -1,3 +1,2 @@
-
 # stt
 Synergy Technical Test
