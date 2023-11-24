@@ -2,5 +2,9 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://tcripps25.github.io/'
+    site: 'https://tcripps25.github.io/',
+
+    build: {
+        inlineStylesheets: 'never'
+      }
 });
