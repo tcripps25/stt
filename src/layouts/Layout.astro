@@ -1,9 +1,11 @@
 ---
+import '@fontsource/open-sans';
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -20,3 +22,9 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
+
+<style>
+	body {
+		font-family: Open Sans;
+	}
+</style>

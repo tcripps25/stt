@@ -1,0 +1,34 @@
+---
+import CourseCard from "./CourseCard.astro";
+import ProductIcon from "../images/product.png";
+import BusinessDevIcon from "../images/business-development.png";
+import BusinessManIcon from "../images/business-management.png";
+import CPDIcon from "../images/cpd.png";
+import OpticsIcon from "../images/optics.png";
+---
+
+<section id="course-catalogue container" class="p-5">
+
+   
+
+    <div class="mx-auto synergy-course-grid">
+        <h2 class="synergy-section-header pb-2 mb-4">Course Catalogue</h2>
+        <div class="row">
+        <CourseCard title="Product and Technical" icon={ProductIcon.src} alt="Icon to represent production." btnText="View Courses" />
+        <CourseCard title="Business Development" icon={BusinessDevIcon.src} alt="Icon to represent production." btnText="View Courses" />
+        <CourseCard title="Optics and Manufacturing" icon={OpticsIcon.src} alt="Icon to represent production." btnText="View Courses" />
+        <CourseCard title="CPD" icon={CPDIcon.src} alt="Icon to represent production." btnText="View Courses" />
+        <CourseCard title="Business Management" icon={BusinessManIcon.src} alt="Icon to represent production." btnText="View Courses" />
+    </div>
+    </div>
+</section>
+
+<style>
+    .synergy-section-header {
+        font-size: x-large;
+        border-bottom: 3px solid #FED700;
+    }
+    .synergy-course-grid {
+        max-width: max-content;
+    }
+</style>

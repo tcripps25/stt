@@ -1,0 +1,30 @@
+---
+interface Props {
+	title: string;
+    url: string;
+    active?: boolean;
+}
+
+const { title, url, active } = Astro.props;
+
+let activeClass = '';
+
+if (active) {
+    activeClass = 'active';
+}
+---
+
+<li class=`synergy-nav-item nav-item font-weight-bold text-uppercase small ${activeClass}`><a class="nav-link" href={url}>{title}</a></li>
+
+<style>
+    .synergy-nav-item {
+        font-size: x-small;
+    }
+
+    .active {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-decoration-color: #FED700;
+        text-underline-offset: 4px;
+    }
+</style>

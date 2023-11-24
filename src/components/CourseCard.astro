@@ -1,0 +1,39 @@
+---
+import Link from './Link.astro';
+
+interface Props {
+	title: string;
+    btnText: string;
+    icon: any;
+    alt: string;
+}
+
+const { title, btnText, icon, alt = 'Alt Missing' } = Astro.props;
+---
+<div class="col mt-2 d-flex justify-content-center">
+<div class="card synergy-card border-0 shadow-sm rounded-0 h-100" style="width: 10rem;">
+    <div class="card-body d-flex flex-column justify-content-between align-items-center">
+      <h5 class="card-title text-center synergy-card-title">{title}</h5>
+      
+      <img class="w-50 m-3" src=`${icon}` alt="{alt}">
+        
+      <Link title={btnText} stretch={true} />
+    
+    </div>
+  </div>
+</div>
+  <style>
+    .synergy-card {
+        .synergy-card-title {
+        font-size: medium;
+        transition: all 0.10s ease-in;
+        transform: translate(0px, 0px);
+    }
+        &:hover {
+            background-color: #FED700;
+            transform: translate(0px, -5px);
+            transition: all 0.10s ease-out;
+        }
+    }
+    
+  </style>

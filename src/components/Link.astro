@@ -1,0 +1,76 @@
+---
+interface Props {
+	title: string;
+    primary?: boolean;
+    stretch?: boolean;
+    contact?: boolean;
+    small?: boolean;
+}
+
+const { title, primary, stretch, contact, small } = Astro.props;
+
+import { Image } from 'astro:assets';
+import Arrow from '../images/arrow-right.svg'
+
+let classes = '';
+
+if (primary) {
+    classes = 'primary';
+}
+
+if (stretch) {
+    classes = classes + ' stretch-link';
+}
+let size = 'w-100';
+
+if (small) {
+    size = 'synergy-small-btn';
+}
+
+---
+<a class=`d-flex justify-content-center align-items-center btn ${size} synergy-btn mb-3 mt-4 text-uppercase ${classes}`> 
+    {contact && 
+    <svg class="button-icon mr-2" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+    }
+    {!contact && 
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" class="button-icon mr-2">
+        <g fill-rule="evenodd">
+            <path fill="currentColor" fill-rule="nonzero" d="M11.743 6.297c.07-.157.07-.367 0-.594-.07-.07-.07-.14-.14-.21L6.506.398C6.226.1 5.791.1 5.494.397c-.297.297-.297.733 0 1.012L9.35 5.267H.903c-.436 0-.715.297-.715.733s.279.733.715.733h8.448l-3.857 3.84a.707.707 0 000 1.03c.14.14.366.21.506.21s.367-.07.506-.21l5.097-5.097c.07-.07.14-.14.14-.21z"></path>
+        </g>
+    </svg>
+    }
+    
+    {title}
+</a>
+
+<style>
+    .synergy-btn {
+        border-radius: 0px;
+        font-size: small;
+        border: 1px solid black;
+        font-size: x-small;
+
+        &.primary {
+            border: 0px;
+            background-color: #FED700;
+        }
+        &.synergy-small-btn {
+            max-width: max-content;
+        }
+        &:hover {
+            background-color: black;
+            color: white;
+
+            .button-icon {
+            fill: white;
+            }
+
+
+            
+        }
+    }
+    .button-icon {
+        width: .60rem;
+        height: .60rem;
+    }
+</style>

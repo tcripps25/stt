@@ -10,6 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.6.0"
+    "@fontsource/open-sans": "^5.0.17",
+    "astro": "^3.6.0",
+    "sass": "^1.69.5"
   }
 }

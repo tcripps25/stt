@@ -1,0 +1,46 @@
+---
+import Button from './Button.astro';
+---
+
+<div class="w-75 mx-auto">
+    <p class="mb-0">Welcome to</p>
+    <h1 class="font-weight">MyLearning</h1>
+<form class="mt-3" id="loginForm" action="#" method="post">
+    <div class="form-group">
+      <label class="text-uppercase synergy-label" for="username">Username</label>
+      <input type="text" id="username" name="username" class="synergy-form-control form-control" required aria-required="true">
+    </div>
+    <div class="form-group">
+      <label class="text-uppercase synergy-label" for="password">Password</label>
+      <input type="password" id="password" name="password" class="form-control synergy-form-control" required aria-required="true">
+    </div>
+    <Button title='Log In' primary={true} />
+  </form>
+  <div class="d-flex justify-content-between">
+    <a class="synergy-link" href="#">Contact Us</a>
+    <a class="synergy-link" href="#">Lost Password?</a>
+  </div>
+</div>
+
+<style>
+    h1 {
+        font-size: x-large;
+    }
+    .synergy-form-control {
+        border: 0px;
+        background-color: transparent;
+        border-bottom: 1px solid black;
+        border-radius: 0px;
+        height: 1.8rem;
+    }
+
+    .synergy-label {
+        font-size: small;
+        font-weight: bold
+    }
+    .synergy-link {
+        font-size: small;
+        color: black;
+    }
+    
+</style>

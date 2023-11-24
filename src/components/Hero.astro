@@ -1,15 +1,23 @@
 ---
 import { Image } from 'astro:assets';
-import localBirdImage from '../images/intro-banner.jpg';
+import bannerImage from '../images/intro-banner.jpg';
+import LogInForm from './LogInForm.astro';
 ---
 
-<div class="d-flex">
-<div>
-    <p>Welcome to</p>
-    <p>My Learning</p>
-
+<div class="hero row row-cols-1 row-cols-md-2 no-gutters">
+<div class="col p-5">
+    <LogInForm />
 </div>
-<div>
-    <Image src={localBirdImage} alt="A graphic to represent My Learning, a personal development portal for limitless learning." width="800" height="400"/>
+<div class="col">
+    <Image class="hero-image w-100 h-100" src={bannerImage} alt="A graphic to represent My Learning, a personal development portal for limitless learning." width="800" height="400"/>
 </div>
 </div>
+</div>
+<style>
+    .hero {
+        background-color: #F2F2F2;
+        .hero-image {
+            object-fit: cover;
+        }
+    }
+</style>

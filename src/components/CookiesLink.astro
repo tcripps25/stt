@@ -1,0 +1,66 @@
+---
+interface Props {
+	title: string;
+    primary?: boolean;
+    stretch?: boolean;
+    small?: boolean;
+}
+
+const { title, primary, stretch, small } = Astro.props;
+
+import { Image } from 'astro:assets';
+import Arrow from '../images/arrow-right.svg'
+
+let classes = '';
+
+if (primary) {
+    classes = 'primary';
+}
+
+if (stretch) {
+    classes = classes + ' stretch-link';
+}
+let size = 'w-100';
+
+if (small) {
+    size = 'synergy-small-btn';
+}
+
+---
+<a class=`d-flex justify-content-center align-items-center btn ${size} synergy-btn mb-3 mt-4 ${classes}`> 
+    
+    {title}
+</a>
+
+<style>
+    .synergy-btn {
+        border-radius: 0px;
+        font-size: small;
+        border: 1px solid #8FBE74;
+        font-size: x-small;
+        color: #8FBE74;
+
+        &.primary {
+            border: 0px;
+            background-color: #FED700;
+        }
+        &.synergy-small-btn {
+            max-width: max-content;
+        }
+        &:hover {
+            background-color: black;
+            color: white;
+
+            .button-icon {
+            fill: white;
+            }
+
+
+            
+        }
+    }
+    .button-icon {
+        width: .60rem;
+        height: .60rem;
+    }
+</style>

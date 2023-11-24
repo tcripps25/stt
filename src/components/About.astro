@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import Video from "../images/videoplaceholder.png"
+---
+
+<section id="synergy-about" class="row no-gutters py-5">
+    <div class="col-12">
+        <div class="synergy-flourish"></div>
+            <div class="px-5 pt-4 pb-3 d-flex justify-content-center position-relative">
+
+                <div class="synergy-video position-relative"></div>
+                    <Image class="position-relative mr-2 video-placeholder" src={Video} alt="An icon of an arrow to illustrate this is the log in button" width="635" height="357"/>
+                </div>
+                <article class="synergy-about-text mx-auto">
+                    <h3>About Nikon Lenswear Uk</h3>
+                    <p>A pioneer in ophthalmic lens technology, Nikon Lenswear supports premium independent opticians across the UK to grow and differentiate their business.</p>
+                </article>
+        
+    </section>
+    </div>
+    
+
+<style>
+    .synergy-flourish {
+        background-color: #F2F2F2;
+        height: 13rem;
+        margin-bottom: -10rem;
+    }
+
+    .synergy-video {
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            top: -25px;
+            left: -25px;
+            background-color: #FED700;
+            height: 260px;
+            width: 450px;
+        }
+    }
+    .video-placeholder {
+        width: 450px;
+        height: auto;
+    }
+    .synergy-about-text {
+        h3 {
+            font-size: x-large;
+        }
+        max-width: 60ch;
+        font-size: small;
+    }
+</style>

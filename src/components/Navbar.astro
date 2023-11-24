@@ -1,3 +1,34 @@
-<header class="navbar p-3">
-<p>Logo</p>
-</header>
+---
+import { Image } from 'astro:assets';
+import logo from '../images/logo.png';
+import NavLink from './NavLink.astro';
+---
+
+<nav class="navbar shadow-sm navbar-expand-lg navbar-light">
+    
+        <a class="navbar-brand" href="#">
+        <Image class="logo" src={logo} alt="A graphic to represent My Learning, a personal development portal for limitless learning." width="200" height="200"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <NavLink title='Dashboard' url='/'></NavLink>
+                <NavLink title='Course Catalogue' url='/' active={true}></NavLink>
+                <NavLink title='My Badges' url='/'></NavLink>
+                <NavLink title='Events' url='/'></NavLink>
+            </ul>
+        </div>
+        <ul class="navbar-nav">
+            <NavLink title='Log In' url='/'></NavLink>
+        </ul>
+</nav>
+
+<style>
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+</style>

@@ -1,0 +1,39 @@
+---
+interface Props {
+	title: string;
+    primary?: boolean;
+}
+
+const { title, primary } = Astro.props;
+
+import { Image } from 'astro:assets';
+import Arrow from '../images/arrow-right.svg'
+
+let classes = '';
+
+if (primary) {
+    classes = 'primary';
+}
+
+---
+<button type="submit" class=`d-flex justify-content-center align-items-center btn w-100 synergy-btn mb-3 mt-4 text-uppercase ${classes}`> 
+    <Image class="button-icon mr-2" src={Arrow} alt="An icon of an arrow to illustrate this is the log in button" width="800" height="400"/>
+    {title}
+</button>
+
+<style>
+    .synergy-btn {
+        border-radius: 0px;
+        font-size: small;
+        border: 1px solid black;
+
+        &.primary {
+            border: 0px;
+            background-color: #FED700;
+        }
+    }
+    .button-icon {
+        width: .60rem;
+        height: .60rem;
+    }
+</style>

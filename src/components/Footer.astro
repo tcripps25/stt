@@ -1,0 +1,54 @@
+---
+import Link from "./Link.astro";
+import CookiesLink from "./CookiesLink.astro";
+---
+
+<footer class="p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+<p class="copyright">© 2023 Nikon Optical Ltd, All rights reserved.</p>
+<Link title="Contact Us" primary={true} contact={true} small={true} />
+            </div>
+        </div>
+<div class="row">
+    <div class="col">
+    <p class="synergy-address">Nikon Optical Ltd<br>
+        2 Tanners Drive<br>
+        Blakelands<br>
+        Milton Keynes, Bucks MK14 5BU<br>
+    United Kingdom</p>
+    </div>
+</div>
+<div class="row">
+<div class="col d-flex flex-column">
+    <a class="footer-link" href='#'>Data retention summary</a>
+    <a class="footer-link" href='#'>Policies</a>
+</div>
+</div>
+<div class="row">
+    <div class="col">
+<CookiesLink small={true} title="Cookies Settings"/>
+    </div>
+</div>
+</div>
+</footer>
+
+<style>
+    footer {
+        background-color: #F2F2F2;
+        .copyright {
+            font-size: x-small;
+        }
+
+        .synergy-address {
+            font-size: x-small;
+            font-weight: bold;
+        }
+
+        .footer-link {
+            font-size: x-small;
+            color: black;
+        }
+    }
+</style>
